@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+void recursionMystery4(int n)
+{
+	if (n <= 1) {
+		cout << "*";
+	}
+	else if (n == 2) {
+		recursionMystery4(n - 1);
+		cout << "*";
+	}
+	else {
+		cout << "(";
+		recursionMystery4(n - 2);
+		cout << ")";
+	}
+}
+int main()
+{
+	recursionMystery4(2);
+	recursionMystery4(3);
+	recursionMystery4(4);
+	recursionMystery4(6);
+	recursionMystery4(9);
+}
