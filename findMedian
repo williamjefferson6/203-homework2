@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+int findMedian(int x[], int l)
+{
+	for (int i = 0; i < l; ++i) {
+		for (int j = i; j < l; ++j) {
+			if (x[i] > x[j]) {
+				int temp = x[i];
+				x[i] = x[j];
+				x[j] = temp;
+			}
+		}
+	}
+	return x[l / 2];
+}
+int main()
+{
+	int x1[] = { 5,2,4,17,55,4,3,26,18,2,17 };
+	int x2[] = { 42,37,1,97,1,2,7,42,3,25,89,15,18,29,27 };
+	cout << findMedian(x1, 11) << endl;
+	cout << findMedian(x2, 15);
+}
