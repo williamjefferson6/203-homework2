@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+void collapsePairs(int x[], int l)
+{
+	for (int i = 0; i < l - 1; i = i + 2) {
+		if ((x[i] + x[i + 1]) % 2 == 0) {
+			x[i] = x[i] + x[i + 1];
+			x[i + 1] = 0;
+		}
+		else {
+			x[i + 1] = x[i] + x[i + 1];
+			x[i] = 0;
+		}
+	}
+	for (int i = 0; i < l; i++) {
+		cout << x[i] << " ";
+	}
+}
+int main()
+{
+	int x[] = { 4,0,3 };
+	collapsePairs(x, 3);
+}
