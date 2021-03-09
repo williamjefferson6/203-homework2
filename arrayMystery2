@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+void mystery2(int list[], int length)
+{
+	for (int i = 0; i < length - 1; i++) {
+		if (i % 2 == 0) {
+			list[i]++;
+		}
+		else {
+			list[i]--;
+		}
+	}
+	for (int i = 0; i < length ; i++) {
+		cout << list[i] << " ";
+	}
+	cout << endl;
+}
+int main()
+{
+	int list1[] = { 6,3 };
+	int list2[] = { 2,4,6 };
+	int list3[] = { 1,2,3,4 };
+	int list4[] = { 2,2,2,2,2 };
+	int list5[] = { 7,3,2,0,5,1 };
+	mystery2(list1, 2);
+	mystery2(list2, 3);
+	mystery2(list3, 4);
+	mystery2(list4, 5);
+	mystery2(list5, 6);
+
+}
