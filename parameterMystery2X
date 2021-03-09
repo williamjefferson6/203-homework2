@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+string* parameterMystery2X(string& s1, string s2)
+{
+	s1 += "1";
+	s2 += "2";
+	cout << s2 << " -- " << s1 << endl;
+	s1 += "!!!";
+	return &s1;
+}
+int main()
+{
+	string s1 = "hi";
+	string s2 = "bye";
+	string s3 = "yo";
+	string* s4 = new string(s3);
+	string* s5 = nullptr;
+
+	parameterMystery2X(s1, s3);
+	s5 = parameterMystery2X(*s4, s2);
+	parameterMystery2X(s2, *s5);
+
+	cout << s1 << " " << s2 << " " << s3 << endl;
+	cout << s4 << " " << *s4 << " " << s5 << " " << *s5 << endl;
+
+	return 0;
+}
