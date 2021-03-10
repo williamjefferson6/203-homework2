@@ -1,3 +1,14 @@
+line 1	
+4 0xdd00 7 12
+line 2	
+6 0xff00 9 15
+line 3	
+8 0xbb00 11 17
+line 4	
+17 15 9 11
+
+
+
 #include <iostream>
 using namespace std;
 int parameterMystery5(int* d, int e, int& f)
