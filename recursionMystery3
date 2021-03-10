@@ -1,3 +1,16 @@
+recursionMystery3(7)	
+8
+recursionMystery3(42)	
+503
+recursionMystery3(385)	
+40906
+recursionMystery3(-790)	
+-80001
+recursionMystery3(89294)	
+900030005
+
+
+
 #include <iostream>
 using namespace std;
 int recursionMystery3(int n)
