@@ -1,3 +1,12 @@
+recursionMystery5(11, 18)	
+20
+recursionMystery5(26, 12)	
+38
+recursionMystery5(32, 48)	
+62
+
+
+
 #include <iostream>
 using namespace std;
 int recursionMystery5(int a, int b)
