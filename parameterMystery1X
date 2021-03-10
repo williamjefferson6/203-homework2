@@ -1,3 +1,16 @@
+line 1	
+9 -3 1 0xcc00
+line 2	
+-7 9 6 0x555500
+line 3	
+5 -7 2 0xdd00
+line 4	
+5 0x555500 9 -3 -7 0xaa00 5
+line 5	
+0xaa00 0xbb00 0xcc00 0xdd00 0xee00
+
+
+
 #include <iostream>
 using namespace std;
 int parameterMystery1X(int a, int& b, int* c)
