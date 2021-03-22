@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+void printRange(int x, int y)
+{
+	if (x > y) {
+		throw x;
+	}
+	static int c = 1;
+	if (x == y) {
+		cout << x;
+		return;
+	}
+	if ((y - x) > c) {
+		cout << x << " > ";
+	}
+	else if ((y - x) == c) {
+		cout << x << " -- ";
+	}
+	else {
+		cout << x << " < ";
+	}
+	c++;
+	printRange(x + 1, y);
+}
+int main()
+{
+	int x, y;
+	cin >> x;
+	cin >> y;
+	printRange(x, y);
+}
