@@ -1,16 +1,16 @@
 float averageValueInFile(string s){
-    ifstream fin;
-    fin.open(s);
+    ifstream myFile;
+    myFile.open(s);
     float x = 0;
     float sum = 0;
     int c = 0;
-    while(fin >> x){
+    while(myFile >> x){
         sum += x;
         c++;
     }
     if (c == 0){
         return 0.0;
     }
-    fin.close();
+    myFile.close();
     return sum / c;
 }
