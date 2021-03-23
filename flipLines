@@ -1,0 +1,23 @@
+void flipLines(string s)
+{
+    ifstream myFile;
+    myFile.open(s);
+    if(myFile.fail()){
+        cout << "Unable to open input file \"" << s << "\"!";
+        return;
+    }
+    string x1 = "";
+    string x2 = "";
+    while(getline(myFile,x1)){
+        if(getline(myFile,x2)){
+            transform(x2.begin(), x2.end(), x2.begin(), ::toupper);
+            cout << x2 << endl;
+            transform(x1.begin(), x1.end(), x1.begin(), ::tolower);
+        }
+        else{
+            transform(x1.begin(), x1.end(), x1.begin(), ::toupper);
+        }
+        cout << x1 << endl;
+    }
+    myFile.close();
+}
