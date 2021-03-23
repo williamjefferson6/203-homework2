@@ -1,0 +1,18 @@
+int largestDigit(int x)
+{
+    int s, e;
+    if(x < 0){
+        x = -x;
+    }
+    if(x == 0){
+        return 0;
+    }
+    else{
+        s = x % 10;
+        e = largestDigit(x / 10);
+        if(s < e){
+            return e;
+        }
+   return s;
+   }
+}
