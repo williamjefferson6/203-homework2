@@ -1,0 +1,48 @@
+int printMostCommonName(string s)
+{
+    ifstream obj(s);
+    if (!obj){
+        return 0;
+    }
+    string l;
+    string names[25];
+    int w = 0; map <string, int> mp; 
+    while (obj >> l){
+        names[w] = l;
+        w++;
+        if (!mp.count(l)){
+            mp.insert(make_pair(l, 1));
+        }
+        else {
+            mp[l]++;
+        }
+    }
+    int location = 0;
+    int timesfound = 0;
+    int x = 0;
+    for (int i = 0; i < w; i++){
+        for (int j =0; j < w; j++){
+            if(names[i] == names[j]){
+                timesfound++;
+            }
+        }
+        if(x < timesfound){
+            location = i;
+            x = timesfound; 
+        }
+        timesfound = 0;
+    }
+    int z = 0;
+    for (map <string, int> :: iterator p = mp.begin(); 
+         p != mp.end(); p++) 
+    { 
+        z++;
+    } 
+    if (z == 0){
+        return 0;
+    }
+    else {
+    cout << "Most common name: " << names[location] << ", " << x << endl;
+    return z;
+    }
+}
