@@ -37,9 +37,9 @@ void wordStatsPlus(string s)
 			unique++;
 		}
 	}
-	cout << "Total xs = " << lines << endl;
+	cout << "Total liness = " << lines << endl;
 	cout << "Total words = " << words << endl;
 	cout << "Total unique letters = " << unique << " (" << 100 * unique / 26 << "% of alphabet)" << endl;
-	cout << "Average words/x = " << (float)words / lines << endl;
+	cout << "Average words/lines = " << (float)words / lines << endl;
 	cout << "Average word length = " << (float)sum / words << endl;
 }
