@@ -43,3 +43,47 @@ void wordStatsPlus(string s)
 	cout << "Average words/lines = " << (float)words / lines << endl;
 	cout << "Average word length = " << (float)sum / words << endl;
 }
+
+
+
+
+Alternate Version(Minus vector)
+
+void wordStatsPlus(string input){
+    ifstream fin(input);
+    if(!fin.is_open()){
+        cout<<"Error, bad input file.";
+        return;
+    }
+    string line = "", str = "";
+    int count = 0, lines = 0, unique = 0, ascii = 0,j=1;
+    while(getline(fin,line)){
+        lines++;
+        bool within_word = false; 
+        for(int i=0; i<line.length(); i++){
+            char ch=line[i];
+            ch = std::tolower(ch);
+            if(ch!=' ' && within_word == false){
+                ++count;
+                within_word = true;
+            }
+            if (ch == ' ') {
+                within_word = false;
+            }
+            if(ch!=' ') {
+                ++ascii;
+            }
+            if(ch>'a' && ch<'z'){
+                if(str.find(ch)==string::npos){
+                    ++unique;
+                    str += ch;
+                }
+            }
+        }
+    }
+    cout<<"Total lines = "<<lines;
+    cout<<"\nTotal words = "<<count;
+    cout<<"\nTotal unique letters = "<<unique<<" ("<<int(++unique*100.0/26.0)<<"% of alphabet)";
+    cout<<"\nAverage words/line = "<<count/float(lines);
+    cout<<"\nAverage word length = "<<ascii/float(count);
+}
